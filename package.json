@@ -1,0 +1,38 @@
+{
+  "name": "sbs_api",
+  "version": "1.0.0",
+  "description": "Api Base Arquitecture",
+  "main": "index.js",
+  "scripts": {
+    "test_mocha":"mocha test/env_test.js",
+    "test-report":"npx mocha --reporter mochawesome test/env_test.js",
+    "test": "node --test test/env_test.js",
+    "test_env": "npx mocha --reporter mochawesome test/env_test.js",
+    "dev": "nodemon run api/index.js",
+    "BD": "nodemon run postgresql/index.js",
+    "PM2_API_ITEMS": "pm2 start api/index.js --name api-items",
+    "PM2_BD": "pm2 start postgresql/index.js --name bbdd"
+  },
+  "author": "David Santiago Puerta B.",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "cheerio": "*",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.0",
+    "node-fetch": "^3.3.0",
+    "pg": "^8.9.0",
+    "pm2": "^5.2.2",
+    "postgresql": "^0.0.1",
+    "request": "^2.88.2",
+    "sqlite3": "^5.1.7"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2",
+    "mocha": "^11.1.0",
+    "mocha-junit-reporter": "^2.2.1",
+    "mochawesome": "^7.1.3",
+    "nodemon": "^2.0.20"
+  }
+}
